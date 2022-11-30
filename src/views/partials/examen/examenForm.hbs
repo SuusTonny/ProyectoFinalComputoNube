@@ -1,0 +1,18 @@
+<div class="card card-body p-4 rounded-0 bg-dark text-white">
+    <h3>Inserta un Examen</h3>
+    <form action="/examenes/add" method="POST">
+    <div>
+        <label for="materia">Examen</label>
+        <input type="text" name="examen" placeholder="Ingresa un examen" id="title" class="form-control rounded-0 bg-dark text-white">
+    </div>
+    <div>
+        <label for="materia">Materia</label>
+        <textarea name="materia" id="description" placeholder="Inserta una materia" class="form-control rounded-0 bg-dark text-white"></textarea>
+    </div>
+    <div>
+        <label for="calificacion">Calificacion</label>
+        <textarea name="calificacion" id="description" placeholder="Inserta una calificacion" class="form-control rounded-0 bg-dark text-white"></textarea>
+    </div>
+    <button class="btn btn-outline-success btn-sm mt-2">Agregar</button>    
+</form>
+</div>

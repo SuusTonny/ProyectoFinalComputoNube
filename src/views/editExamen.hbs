@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white rounded-0">
+                <h1>Editar Examenes</h1>
+                <form action="/editExamen/{{examen._id}}" method="POST">
+                    <div class="mb-3">
+                        <label for="title">Examen</label>
+                        <input type="text" name="examen" placeholder="Ingresa un examen" value="{{examen.examen}}" class="form-control rounded-0 bg-dark text-white" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">materia</label>
+                        <textarea name="description" placeholder="Inserta una descripcion" class="form-control rounded-0 bg-dark text-white">{{examen.materia}}</textarea>
+                    </div>
+                    <div>
+                        <label for="calificacion">Calificacion</label>
+                        <textarea name="calificacion" id="description" placeholder="Inserta una calificacion" class="form-control rounded-0 bg-dark text-white">{{examen.calificacion}}</textarea>
+                    </div>
+                    <button class="btn btn-outline-success btn-sm mt-2">Guardar</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+{{#if examenes}}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>N.</th>
+            <th>Examen</th>
+            <th>Calificacion</th>
+            <th>Materia</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each examenes}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{examen}}</td>
+            <td>{{calificacion}}</td>
+            <td>{{materia}}</td>  
+            <td>
+                {{#if done}}
+                    <a href="/taggdoneExamen/{{_id}}" class="btn btn-success">Realizada</a>
+                {{else}}
+                    <a href="/taggdoneExamen/{{_id}}" class="btn btn-warning">Pendiente</a>
+                {{/if}}
+
+                            
+                <a href="/editExamen/{{_id}}" class="btn btn-info">Editar</a>
+                <a href="/deleteExamen/{{_id}}" class="btn btn-danger">Eliminar</a>
+                
+            </td>           
+        </tr>  
+        
+    {{/each}}
+    </tbody>
+</table>
+{{else}}
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <h1 class="text-center">No hay examenes asignados</h1>
+            <img src="/icons/empty_task_3.jpg" class="w-50">
+        </div>
+    </div>
+        
+{{/if}}

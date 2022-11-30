@@ -1,0 +1,33 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a href="/" class="navbar-brand">CRUD NodeJS y MongoDB</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {{#if user}}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Tarea">Tarea</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/examen">Examen</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/logout">Logout</a>
+                </li>
+                {{else}}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/signin">Login</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup">Register</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+
+</nav>
