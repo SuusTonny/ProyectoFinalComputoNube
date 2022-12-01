@@ -1,3 +1,8 @@
+.banner-image {
+    background-image: url('../img/fondo2.jpg');
+    background-size: cover;
+  }
+
 body {
     margin: 0;
     padding: 0;
@@ -34,6 +39,12 @@ body {
 }
 .logo {
     width: 30%;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
 }
 
 @keyframes animate{
