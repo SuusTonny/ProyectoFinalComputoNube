@@ -6,11 +6,18 @@ body {
 
 .blanco { color: #ffffff; }
 
+.transparente{
+    background-color: transparent;
+}
+
+.separar{
+    top: 20px;
+}
 .block{
     position: relative;
     margin: 10% auto 0;
     width: 50%;
-    height: 400px;
+    height: 380px;
     background: linear-gradient(0deg, black, rgb(44, 43, 43));
 }
 .glow::before , .glow::after{
@@ -43,4 +50,8 @@ body {
 
 .glow::after{
     filter: blur(40px);
+}
+
+.textcenter{
+    text-align: center;
 }
