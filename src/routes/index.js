@@ -3,6 +3,7 @@ import Task from "../models/Task";
 import { renderTasks, createTask,aboutTask, renderTaskEdit, editTask, delteTask, doneTask } from "../controllers/tasks.controller";
 import { createExamen, renderExamen, editExamen, delteexamen, doneExamen, renderExamenEdit} from "../controllers//examen.controller";
 import { renderSignUpForm, renderSigninForm, signup, signin, logout, Inicio } from "../controllers/user.controller";
+import { renderSnack, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller"
 
 import isAuthenticated from "../helpers/auth"
 
@@ -20,6 +21,19 @@ router.post("/users/signin", signin);
 router.get("/users/logout", logout);
 
 router.get("/", Inicio);
+
+
+router.get("/snack", isAuthenticated, renderSnack);
+
+router.post("/snack/add", isAuthenticated, createSnack) ;
+
+router.get("/editSnack/:id", isAuthenticated, renderSnackEdit);
+
+router.post("/editSnack/:id", isAuthenticated, editSnack);
+
+router.get("/deleteSnack/:id", isAuthenticated, deletesnack);
+
+router.get("/taggdone/:id", isAuthenticated, doneSnack);
 
 
 router.get("/tarea", isAuthenticated, renderTasks);
