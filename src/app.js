@@ -8,7 +8,7 @@ import morgan from "morgan";
 import passport from 'passport'
 import session from 'express-session'
 import flash from 'connect-flash'
-
+import multer from 'multer'
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -25,7 +25,15 @@ app.set("view engine", ".hbs");
 
 //middlewares
 app.use(morgan('dev'));
+app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+  filename: (req, file, cb) => {
+    cb(null, new Date().getTime() + path.extname(file.originalname));
+  }  
+});
+app.use(multer({storage: storage}).single('image'));
 app.use(session({
   secret: 'miclave',
   resave: false,

@@ -58,7 +58,7 @@ export const renderSigninForm = (req, res) => {
 };
 
 export const signin = passport.authenticate('local',{
-    successRedirect: '/tarea',
+    successRedirect: '/',
     failureRedirect: '/users/signin',
     failureFlash: true
 });

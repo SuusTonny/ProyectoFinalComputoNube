@@ -1,0 +1,15 @@
+
+<div class="banner-imagePlay w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {{#each carteleras}}
+        <img src="{{imageURL}}" alt="" class="swiper-slide ">
+        {{/each}}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="">
+            <a href="/editCartelera"><button>Editar</button></a>
+    </div>
+</div>
+

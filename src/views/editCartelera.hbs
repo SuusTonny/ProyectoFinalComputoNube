@@ -1,0 +1,52 @@
+<div class="banner-imagePlay w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="col-md-4">
+        <div class="card verde">
+            <div class="card-body">
+                <form action="/editCartelera/add" method="POST" enctype="multipart/form-data">
+                  <div class="form-group mt-3">
+                    <input type="text" name="pelicula" class="form-control" placeholder="Titulo de la Pelicula">
+                  </div>  
+                  <div class="form-group mt-1">
+                    <textarea name="sinopsis" id="" class="form-control" placeholder="Descripcion de la pelicula"></textarea>
+                  </div>
+                  <div class="form-group mt-1">
+                    <input type="text" name="precio" class="form-control" placeholder="Precio del boleto de la Pelicula">
+                  </div>
+                  <div class="input-group mt-3">
+                    <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                        <label for="inputGroupFile01" class="custom-file-label">Escoge el Archivo</label>
+                    </div>
+                  </div>
+                <button class="btn btn-primary mt-3">
+                    Subir pelicula
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+      <table class="table verde">
+        <thead>
+          <tr>
+            <th>Pelicula</th>
+            <th>Sinopsis</th>
+            <th>Precio del Boleto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each carteleras}}
+          <tr>
+            <td>{{pelicula}}</td>
+            <td>{{sinopsis}}</td>
+            <td>{{precio}}</td>
+            <td>
+              <a href="{{imageURL}}" target="_blank" class="btn btn-primary">Vista</a>
+              <a href="/deleteCartelera/{{_id}}" class="btn btn-danger">Borrar</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+</div>
