@@ -43,7 +43,7 @@ export const createCartelera =async(req,res)=>{
 
 export const renderCarteleraEdit = async(req,res)=>{
     const cartelera = await Cartelera.findById(req.params.id).lean()
-    res.render("editCartelera",{cartelera});
+    res.render("editCartel",{cartelera});
 }
 
 export const editCartelera = async(req,res)=>{

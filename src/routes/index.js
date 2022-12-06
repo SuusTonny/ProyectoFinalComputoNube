@@ -30,9 +30,9 @@ router.get("/editCartelera", isAuthenticated, renderCarteEdith);
 
 router.post("/editCartelera/add", isAuthenticated, createCartelera);
 
-router.get("/editCartelera/:id", isAuthenticated, renderCarteleraEdit);
+router.get("/editCartel/:id", isAuthenticated, renderCarteleraEdit);
 
-router.post("/editCartelera/:id", isAuthenticated, editCartelera);
+router.post("/editCartel/:id", isAuthenticated, editCartelera);
 
 router.get("/deleteCartelera/:id", isAuthenticated, deletecartelera);
 

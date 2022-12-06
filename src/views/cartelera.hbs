@@ -1,9 +1,17 @@
 
 <div class="banner-imagePlay w-100 vh-100 d-flex justify-content-center align-items-center ">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
+    <div class="container swiper mySwiper">
+      <div class="swiper-wrapper contenedor">
         {{#each carteleras}}
-        <img src="{{imageURL}}" alt="" class="swiper-slide ">
+        <figure class="swiper-slide">
+          <img src="{{imageURL}}" href="" alt="" class="">
+          <div class="capa"><h3>Información</h3>
+            <p><br>Nombre de la Pelicula: <br>{{pelicula}}<br><br>
+            Sinopsis:<br>{{sinopsis}}<br><br>
+            Precio del Boleto:<br>${{precio}}
+          </p></div>
+        </figure>
+        
         {{/each}}
       </div>
       <div class="swiper-pagination"></div>

@@ -1,5 +1,5 @@
 <div class="banner-imagePlay w-100 vh-100 d-flex justify-content-center align-items-center ">
-    <div class="col-md-4">
+    <div class="col-md-4 container">
         <div class="card verde">
             <div class="card-body">
                 <form action="/editCartelera/add" method="POST" enctype="multipart/form-data">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-7 div1 container">
       <table class="table verde">
         <thead>
           <tr>
@@ -43,6 +43,7 @@
             <td>
               <a href="{{imageURL}}" target="_blank" class="btn btn-primary">Vista</a>
               <a href="/deleteCartelera/{{_id}}" class="btn btn-danger">Borrar</a>
+              <a href="/editCartel/{{_id}}" class="btn btn-primary">Editar</a>
             </td>
           </tr>
           {{/each}}

@@ -1,6 +1,7 @@
 .banner-image {
     background-image: url('../img/fondo2.jpg');
     background-size: cover;
+    
 }
 
 .swiper {
@@ -11,10 +12,14 @@
 .banner-imageFood {
     background-image: url('../img/fondocomida.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .banner-imagePlay {
     background-image: url('../img/fondoplay.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
@@ -38,12 +43,12 @@ body {
     padding: 0;
 }
 
-.swiper {
+.swiper{
     width: 100%;
     height: 80%
 }
 
-.swiper-slide {
+.swiper-slide figure{
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -62,12 +67,55 @@ body {
     -webkit-align-items: center;
     align-items: center;
 }
+.contenedor figure{
+    position: relative;
+    cursor: pointer;
+
+}
+.contenedor figure .capa{
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    background: rgba(30, 247, 124, 0.6);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    color: #fff;
+}
+.contenedor figure:hover > .capa{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor figure:hover > .capa h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+.contenedor figure .capa h3{
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    margin-top: 30px;
+}
+
+.contenedor figure .capa p{
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
 
 .swiper-slide img {
     display: block;
     width: 90%;
     height: 100%;
     object-fit: cover;
+    border-radius: 6px;
+    transition: all 500ms ease-out;
 }
 
 .blanco { color: #ffffff; }
@@ -237,4 +285,14 @@ body {
     margin: auto;
     min-height: 100%;
     min-width: 100%;
+}
+
+.div1 {
+    overflow:scroll;
+    height:400px;
+    width:820px;
+}
+.div1 table {
+   width:800px;
+   background-color:lightgray;
 }
