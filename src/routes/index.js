@@ -3,10 +3,11 @@ import Task from "../models/Task";
 import { renderTasks, createTask,aboutTask, renderTaskEdit, editTask, delteTask, doneTask } from "../controllers/tasks.controller";
 import { createExamen, renderExamen, editExamen, delteexamen, doneExamen, renderExamenEdit} from "../controllers//examen.controller";
 import { renderSignUpForm, renderSigninForm, signup, signin, logout, Inicio } from "../controllers/user.controller";
-import { renderSnack, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller";
+import { renderSnack, renderSnackEd, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller";
 import {renderCartelera, renderCarteEdith, createCartelera, editCartelera, deletecartelera, doneCartelera, renderCarteleraEdit} from "../controllers/fotocartelera.controller";
 
-import isAuthenticated from "../helpers/auth"
+import isAuthenticated from "../helpers/auth";
+import { isAdmin } from "../helpers/auth";
 
 const router = Router();
 
@@ -26,15 +27,15 @@ router.get("/", Inicio);
 
 router.get("/cartelera", isAuthenticated, renderCartelera);
 
-router.get("/editCartelera", isAuthenticated, renderCarteEdith);
+router.get("/editCartelera", isAuthenticated, isAdmin,renderCarteEdith);
 
-router.post("/editCartelera/add", isAuthenticated, createCartelera);
+router.post("/editCartelera/add", isAuthenticated, isAdmin, createCartelera);
 
-router.get("/editCartel/:id", isAuthenticated, renderCarteleraEdit);
+router.get("/editCartel/:id", isAuthenticated, isAdmin, renderCarteleraEdit);
 
-router.post("/editCartel/:id", isAuthenticated, editCartelera);
+router.post("/editCartel/:id", isAuthenticated, isAdmin, editCartelera);
 
-router.get("/deleteCartelera/:id", isAuthenticated, deletecartelera);
+router.get("/deleteCartelera/:id", isAuthenticated, isAdmin, deletecartelera);
 
 router.get("/taggdone/:id", isAuthenticated, doneCartelera);
 
@@ -43,13 +44,15 @@ router.get("/taggdone/:id", isAuthenticated, doneCartelera);
 
 router.get("/snack", isAuthenticated, renderSnack);
 
-router.post("/snack/add", isAuthenticated, createSnack) ;
+router.get("/editSnack", isAuthenticated, isAdmin, renderSnackEd);
 
-router.get("/editSnack/:id", isAuthenticated, renderSnackEdit);
+router.post("/editSnack/add", isAuthenticated, isAdmin, createSnack);
 
-router.post("/editSnack/:id", isAuthenticated, editSnack);
+router.get("/editSnac/:id", isAuthenticated, isAdmin, renderSnackEdit);
 
-router.get("/deleteSnack/:id", isAuthenticated, deletesnack);
+router.post("/editSnac/:id", isAuthenticated, isAdmin, editSnack);
+
+router.get("/deleteSnack/:id", isAuthenticated, isAdmin, deletesnack);
 
 router.get("/taggdone/:id", isAuthenticated, doneSnack);
 

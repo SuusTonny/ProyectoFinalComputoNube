@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white rounded-0">
+                <h1>Editar Tareas</h1>
+                <form action="/editSnac/{{snack._id}}" method="POST">
+                    <div class="form-group mt-3">
+                    <input type="text" name="snack" class="form-control" placeholder="Titulo de la Pelicula" value="{{snack.snack}}">
+                  </div>  
+                  <div class="form-group mt-1">
+                    <textarea name="descripcion" class="form-control" placeholder="Descripcion de la pelicula" >{{snack.descripcion}}</textarea>
+                  </div>
+                  <div class="form-group mt-1">
+                    <input type="text" name="precio" class="form-control" placeholder="Precio del boleto de la Pelicula" value="{{snack.precio}}">
+                  </div>
+                <button class="btn btn-primary mt-3">
+                    Subir snack
+                </button>   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

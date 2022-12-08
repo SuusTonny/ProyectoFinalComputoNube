@@ -22,8 +22,8 @@ const userSchema = new Schema({
         require: true
     },
     perfil: {
-        type: String,
-        require: true
+        type: Number,
+        default: 0
     }
 }); 
 

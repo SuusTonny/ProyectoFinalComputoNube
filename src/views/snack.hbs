@@ -1,5 +1,21 @@
-<div class="banner-imageFood w-100 vh-100 d-flex justify-content-center align-items-center">
-    <div class="row">
-        {{> snack/snackimage}}
-    </div>   
+<div class="banner-imageFood w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="container swiper mySwiper">
+      <div class="swiper-wrapper contenedor">
+        {{#each snacks}}
+        <figure class="swiper-slide">
+          <img src="{{imageURL}}" href="" alt="" class="">
+          <div class="capa colorr"><h3>Información</h3>
+            <p><br>Nombre del Snack: <br>{{snack}}<br><br>
+            Descripcion:<br>{{descripcion}}<br><br>
+            Precio del Snack:<br>${{precio}}
+          </p></div>
+        </figure>
+        
+        {{/each}}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="">
+            <a href="/editSnack"><button>Editar</button></a>
+    </div>
 </div>

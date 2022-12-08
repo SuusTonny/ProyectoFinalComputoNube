@@ -1,20 +1,53 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 offset-md-3">
-            <div class="card card-body bg-dark p-4 text-white rounded-0">
-                <h1>Editar Snacks</h1>
-                <form action="/edit/{{task._id}}" method="POST">
-                    <div class="mb-3">
-                        <label for="title">Titulo</label>
-                        <input type="text" name="title" placeholder="Ingresa un titulo" value="{{task.title}}" class="form-control rounded-0 bg-dark text-white" >
+<div class="banner-imageFood w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="col-md-4 container">
+        <div class="card rojo">
+            <div class="card-body">
+                <form action="/editSnack/add" method="POST" enctype="multipart/form-data">
+                  <div class="form-group mt-3">
+                    <input type="text" name="snack" class="form-control" placeholder="Nombre del Snack">
+                  </div>  
+                  <div class="form-group mt-1">
+                    <textarea name="descripcion" id="" class="form-control" placeholder="Descripcion del Snack"></textarea>
+                  </div>
+                  <div class="form-group mt-1">
+                    <input type="text" name="precio" class="form-control" placeholder="Precio del Sanck">
+                  </div>
+                  <div class="input-group mt-3">
+                    <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                        <label for="inputGroupFile01" class="custom-file-label">Escoge el Archivo</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="description">Descripcion</label>
-                        <textarea name="description" placeholder="Inserta una descripcion" class="form-control rounded-0 bg-dark text-white">{{task.description}}</textarea>
-                    </div>
-                    <button class="btn btn-outline-success btn-sm mt-2">Guardar</button>    
+                  </div>
+                <button class="btn btn-primary mt-3">
+                    Subir Snack
+                </button>
                 </form>
             </div>
         </div>
+    </div>
+    <div class="col-md-7 div1 container">
+      <table class="table verde">
+        <thead>
+          <tr>
+            <th>Snack</th>
+            <th>Descripcion</th>
+            <th>Precio del Boleto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each snacks}}
+          <tr>
+            <td>{{snack}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{precio}}</td>
+            <td>
+              <a href="{{imageURL}}" target="_blank" class="btn btn-primary">Vista</a>
+              <a href="/deleteSnack/{{_id}}" class="btn btn-danger">Borrar</a>
+              <a href="/editSnac/{{_id}}" class="btn btn-primary">Editar</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
 </div>

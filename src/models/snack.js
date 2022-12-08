@@ -4,7 +4,6 @@ const snackSchema = new Schema({
     snack:{
         type:String,
         require:true,
-        unique: true,
         trim: true
     } ,
     descripcion:{
@@ -15,9 +14,8 @@ const snackSchema = new Schema({
         type: Number,
         require: true
     } ,
-},{
-    timestamps:true,
-    versionKey: false
+    imageURL: String,
+    public_id: String,
 });
 
 

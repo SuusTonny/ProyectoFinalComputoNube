@@ -77,13 +77,20 @@ body {
     top: 0;
     width: 90%;
     height: 100%;
-    background: rgba(30, 247, 124, 0.6);
     transition: all 500ms ease-out;
     opacity: 0;
     visibility: hidden;
     text-align: center;
     color: #fff;
 }
+.colorv{
+    background: rgba(37, 247, 30, 0.6);
+}
+
+.colorr{
+    background: rgba(247, 30, 30, 0.6);
+}
+
 .contenedor figure:hover > .capa{
     opacity: 1;
     visibility: visible;
@@ -118,6 +125,7 @@ body {
     transition: all 500ms ease-out;
 }
 
+
 .blanco { color: #ffffff; }
 
 .gris{
@@ -130,6 +138,10 @@ body {
 
 .verde{
     background-color: #00ff4c;
+    opacity: 85%;
+}
+.rojo{
+    background-color: #fe3a3a;
     opacity: 85%;
 }
 
