@@ -5,12 +5,14 @@ import { createExamen, renderExamen, editExamen, delteexamen, doneExamen, render
 import { renderSignUpForm, renderSigninForm, signup, signin, logout, Inicio } from "../controllers/user.controller";
 import { renderSnack, renderSnackEd, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller";
 import {renderCartelera, renderCarteEdith, createCartelera, editCartelera, deletecartelera, doneCartelera, renderCarteleraEdit} from "../controllers/fotocartelera.controller";
-import {renderComentario,renderComentarioE, createComentario, aboutComentario, renderComentarioEdit, editComentario, delteComentario, doneComentario} from "../controllers/comentario.controller"
-
+import {renderComentario,renderComentarioE, createComentario, renderComentarioEdit, editComentario, deleteComentario, doneComentario} from "../controllers/comentario.controller"
+import {renderPerfil} from "../controllers/perfil.controller";
 import isAuthenticated from "../helpers/auth";
 import { isAdmin } from "../helpers/auth";
 
 const router = Router();
+
+
 
 
 router.get("/users/signup", renderSignUpForm);
@@ -24,6 +26,10 @@ router.post("/users/signin", signin);
 router.get("/users/logout", logout);
 
 router.get("/", Inicio);
+
+
+router.get("/miPerfil", isAuthenticated, renderPerfil)
+
 
 
 router.get("/cartelera", isAuthenticated, renderCartelera);
@@ -62,13 +68,13 @@ router.get("/comentario", isAuthenticated, renderComentario);
 
 router.get("/editComen", isAuthenticated, isAdmin, renderComentarioE);
 
-router.post("/comentarios/add", isAuthenticated, isAdmin, createComentario) ;
+router.post("/comentarios/add", isAuthenticated, createComentario) ;
 
 router.get("/editComentario/:id", isAuthenticated, isAdmin, renderComentarioEdit);
 
 router.post("/editComentario/:id", isAuthenticated, isAdmin, editComentario);
 
-router.get("/deleteComentario/:id", isAuthenticated, isAdmin, delteComentario);
+router.get("/deleteComentario/:id", isAuthenticated, isAdmin, deleteComentario);
 
 
 router.get("/tarea", isAuthenticated, renderTasks);

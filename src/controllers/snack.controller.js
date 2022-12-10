@@ -1,5 +1,4 @@
 import Snack from "../models/snack";
-import User from "../models/User";
 
 import cloudinary from "cloudinary";
 
@@ -12,8 +11,8 @@ import fs from "fs-extra";
 
 export const renderSnack = async(req,res)=>{
     const snacks = await Snack.find().lean();
-    const users = await User.find().lean();
-    res.render("snack",{snacks:snacks, users:users});
+    const perfil = req.user.perfil
+    res.render("snack",{perfil, snacks:snacks});
 };
 
 export const renderSnackEd = async(req,res)=>{

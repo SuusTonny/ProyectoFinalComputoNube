@@ -1,19 +1,14 @@
 import { Schema,model } from "mongoose";
 
 const comentarioSchema = new Schema({
-    nombre:{
+    correo:{
         type:String,
-        require:true,
-        unique: true,
-        trim: true
+        require:true
     } ,
     descripcion:{
         type: String,
         require: true
     } ,
-},{
-    timestamps:true,
-    versionKey: false
 });
 
 

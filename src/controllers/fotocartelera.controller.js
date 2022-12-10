@@ -1,5 +1,5 @@
 import Cartelera from "../models/fotocartelera";
-import users from "../models/User";
+
 
 import cloudinary from "cloudinary";
 
@@ -12,8 +12,8 @@ import fs from "fs-extra";
 
 export const renderCartelera = async(req,res)=>{
     const carteleras = await Cartelera.find().lean();
-    const user = await users.find().lean();
-    res.render("cartelera",{ user:user, carteleras:carteleras});
+    const perfil = req.user.perfil
+    res.render("cartelera",{ perfil, carteleras:carteleras});
 };
 
 export const renderCarteEdith = async(req,res)=>{

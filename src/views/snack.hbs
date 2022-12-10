@@ -1,4 +1,4 @@
-<div class="banner-imageFood w-100 vh-100 d-flex justify-content-center align-items-center ">
+<div class="banner-imageFood w-100 vh-100 d-flex justify-content-center align-items-center block-scroll">
     <div class="container swiper mySwiper">
       <div class="swiper-wrapper contenedor">
         {{#each snacks}}
@@ -14,8 +14,10 @@
         {{/each}}
       </div>
       <div class="swiper-pagination"></div>
-    </div>
-    <div class="">
-            <a href="/editSnack"><button>Editar</button></a>
+      {{#if perfil}}
+      <div class="mt-3">
+          <a href="/editSnack"><button>Editar</button></a>
+      </div>
+      {{/if}}
     </div>
 </div>
