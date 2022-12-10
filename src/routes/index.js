@@ -6,7 +6,7 @@ import { renderSignUpForm, renderSigninForm, signup, signin, logout, Inicio } fr
 import { renderSnack, renderSnackEd, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller";
 import {renderCartelera, renderCarteEdith, createCartelera, editCartelera, deletecartelera, doneCartelera, renderCarteleraEdit} from "../controllers/fotocartelera.controller";
 import {renderComentario,renderComentarioE, createComentario, renderComentarioEdit, editComentario, deleteComentario, doneComentario} from "../controllers/comentario.controller"
-import {renderPerfil} from "../controllers/perfil.controller";
+import {renderPerfil, renderPerfilEdit, editPerfil} from "../controllers/perfil.controller";
 import isAuthenticated from "../helpers/auth";
 import { isAdmin } from "../helpers/auth";
 
@@ -30,6 +30,9 @@ router.get("/", Inicio);
 
 router.get("/miPerfil", isAuthenticated, renderPerfil)
 
+router.get("/editPerfil", isAuthenticated, renderPerfilEdit);
+
+router.post("/editPerfil", isAuthenticated, editPerfil);
 
 
 router.get("/cartelera", isAuthenticated, renderCartelera);
