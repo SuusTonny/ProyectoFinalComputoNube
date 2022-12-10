@@ -3,6 +3,13 @@
     background-size: cover;
     
 }
+.banner-imageComen {
+    background-image: url('../img/fondocomen.jpg');
+    background-size: cover;
+    
+}
+
+.block-scroll {overflow:hidden;}
 
 .swiper {
     width: 600px;
@@ -306,5 +313,15 @@ body {
 }
 .div1 table {
    width:800px;
+   background-color:lightgray;
+}
+
+.div2 {
+    overflow:scroll;
+    height:300px;
+    width:650px;
+}
+.div2 table {
+   width:600px;
    background-color:lightgray;
 }

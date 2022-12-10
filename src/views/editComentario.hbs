@@ -1,0 +1,20 @@
+<div class="banner-imageComen w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="container row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white rounded-0">
+                <h1>Editar Comentario</h1>
+                <form action="/editComentario/{{comentario._id}}" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre">nombre</label>
+                        <input type="text" name="nombre" placeholder="Ingresa un nombre" value="{{comentario.nombre}}" class="form-control rounded-0 bg-dark text-white" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea name="descripcion" placeholder="Inserta una descripcion" class="form-control rounded-0 bg-dark text-white">{{comentario.descripcion}}</textarea>
+                    </div>
+                    <button class="btn btn-outline-success btn-sm mt-2">Guardar</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

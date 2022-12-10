@@ -10,7 +10,7 @@ helpers.isAuthenticated = (req, res, next) => {
 
 //admin
 export const isAdmin = (req, res, next) =>{
-    if(req.user.perfil === 0){
+    if(req.user.perfil === false){
         res.redirect("/");
     }
     next();

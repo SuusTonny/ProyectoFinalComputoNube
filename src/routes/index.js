@@ -5,6 +5,7 @@ import { createExamen, renderExamen, editExamen, delteexamen, doneExamen, render
 import { renderSignUpForm, renderSigninForm, signup, signin, logout, Inicio } from "../controllers/user.controller";
 import { renderSnack, renderSnackEd, createSnack, editSnack, deletesnack, doneSnack, renderSnackEdit } from "../controllers/snack.controller";
 import {renderCartelera, renderCarteEdith, createCartelera, editCartelera, deletecartelera, doneCartelera, renderCarteleraEdit} from "../controllers/fotocartelera.controller";
+import {renderComentario,renderComentarioE, createComentario, aboutComentario, renderComentarioEdit, editComentario, delteComentario, doneComentario} from "../controllers/comentario.controller"
 
 import isAuthenticated from "../helpers/auth";
 import { isAdmin } from "../helpers/auth";
@@ -55,6 +56,19 @@ router.post("/editSnac/:id", isAuthenticated, isAdmin, editSnack);
 router.get("/deleteSnack/:id", isAuthenticated, isAdmin, deletesnack);
 
 router.get("/taggdone/:id", isAuthenticated, doneSnack);
+
+
+router.get("/comentario", isAuthenticated, renderComentario);
+
+router.get("/editComen", isAuthenticated, isAdmin, renderComentarioE);
+
+router.post("/comentarios/add", isAuthenticated, isAdmin, createComentario) ;
+
+router.get("/editComentario/:id", isAuthenticated, isAdmin, renderComentarioEdit);
+
+router.post("/editComentario/:id", isAuthenticated, isAdmin, editComentario);
+
+router.get("/deleteComentario/:id", isAuthenticated, isAdmin, delteComentario);
 
 
 router.get("/tarea", isAuthenticated, renderTasks);
