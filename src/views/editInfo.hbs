@@ -1,0 +1,20 @@
+<div class="banner-imageComen w-100 vh-100 d-flex justify-content-center align-items-center ">
+    <div class="container row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white rounded-0">
+                <h1>Editar Informacion</h1>
+                <form action="/editInfo/{{info._id}}" method="POST">
+                    <div class="mb-3">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" name="titulo" placeholder="Ingresa tu titulo" value="{{info.titulo}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="informacion">Informacion</label>
+                        <textarea name="informacion" placeholder="Inserta una informacion" class="form-control rounded-0 bg-dark text-white">{{info.informacion}}</textarea>
+                    </div>
+                    <button class="btn btn-outline-success btn-sm mt-2">Guardar</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

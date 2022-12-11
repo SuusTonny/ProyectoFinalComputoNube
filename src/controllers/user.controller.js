@@ -1,8 +1,10 @@
 import User from "../models/User";
 import passport from 'passport';
+import Info from "../models/info"
 
-export const Inicio = (req, res) => {
-    res.render('Index');
+export const Inicio = async(req, res) => {
+    const infos = await Info.find().lean();
+    res.render("Index",{infos:infos});
 };
 
 

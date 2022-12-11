@@ -9,6 +9,7 @@ import {renderComentario,renderComentarioE, createComentario, renderComentarioEd
 import {renderPerfil, renderPerfilEdit, editPerfil} from "../controllers/perfil.controller";
 import isAuthenticated from "../helpers/auth";
 import { isAdmin } from "../helpers/auth";
+import {createInfo, renderInfo, renderInfoEdit, editInfo, deleteInfo} from "../controllers/info.controller"
 
 const router = Router();
 
@@ -25,7 +26,19 @@ router.post("/users/signin", signin);
 
 router.get("/users/logout", logout);
 
+
 router.get("/", Inicio);
+
+router.get("/info", isAuthenticated, isAdmin, renderInfo);
+
+router.post("/info/add", isAuthenticated, isAdmin, createInfo);
+
+router.get("/editInfo/:id", isAuthenticated, isAdmin, renderInfoEdit);
+
+router.post("/editInfo/:id", isAuthenticated, isAdmin, editInfo);
+
+router.get("/deleteInfo/:id", isAuthenticated, isAdmin, deleteInfo);
+
 
 
 router.get("/miPerfil", isAuthenticated, renderPerfil)

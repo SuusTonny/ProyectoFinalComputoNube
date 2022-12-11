@@ -1,21 +1,21 @@
-{{#if comentarios}}
+{{#if infos}}
 <table class="table table-bordered table-hover bg-secondary text-white">
     <thead>
         <tr>
-            <th>Correo</th>
-            <th>Descripcion</th>
+            <th>titulo</th>
+            <th>Informacion</th>
         </tr>
     </thead>
     <tbody>
-        {{#each comentarios}}
+        {{#each infos}}
         <tr>
-            <td>{{correo}}</td>
-            <td>{{descripcion}}</td>
+            <td>{{titulo}}</td>
+            <td>{{informacion}}</td>
             <td>
 
                             
-                <a href="/editComentario/{{_id}}" style="--clr:#1e9bff" class="btn btn-info"><span>Editar</span><i></i></a>
-                <a href="/deleteComentario/{{_id}}" style="--clr:#1e9bff" class="btn btn-danger"><span>Eliminar</span><i></i></a>
+                <a href="/editInfo/{{_id}}" class="btn btn-info"><span>Editar</span><i></i></a>
+                <a href="/deleteInfo/{{_id}}" class="btn btn-danger"><span>Eliminar</span><i></i></a>
                 
             </td> 
                     
@@ -27,7 +27,7 @@
 {{else}}
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div>
-            <h1 class="text-center blanco">No hay comentarios</h1>
+            <h1 class="text-center blanco">No hay informacion</h1>
             <img src="/icons/empty_task_3.jpg" class="w-50">
         </div>
     </div>

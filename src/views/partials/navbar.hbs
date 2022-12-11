@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
       <div class="container">
-        <a class="navbar-brand" href="/">Cine Plus</a>
+        <a class="navbar-brand" style="--clr:#1e9bff" href="/"><span>CinePlus</span><i></i></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,30 +17,28 @@
           <div class="mx-auto"></div>
           <ul class="navbar-nav">
             {{#if user}}
+                
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/snack">Snacks</a>
+                    <a style="--clr:#1e9bff" href="/snack"><span>Snacks</span><i></i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="/cartelera">Cartelera</a>
+                    <a style="--clr:#1e9bff" href="/cartelera"><span>Cartelera</span><i></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/comentario">Sugerencias</a>
+                    <a style="--clr:#1e9bff" href="/comentario"><span>Sugerencias</span><i></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/miPerfil">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/examen">Examen</a>
+                    <a style="--clr:#1e9bff" href="/miPerfil"><span>Perfil</span><i></i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="/users/logout">Logout</a>
+                    <a style="--clr:#1e9bff" href="/users/logout"><span>Cerrar Sesion</span><i></i></a>
                 </li>
                 {{else}}
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="/users/signin">Login</a>
+                    <a style="--clr:#1e9bff" href="/users/signin"><span>Iniciar Sesion</span><i></i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="/users/signup">Register</a>
+                    <a style="--clr:#1e9bff" href="/users/signup"><span>Registarse</span><i></i></a>
                 </li>
                 {{/if}}
           </ul>
