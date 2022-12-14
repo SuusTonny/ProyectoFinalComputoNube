@@ -398,3 +398,8 @@ a:hover i::after{
     width: 20px;
     left: 80%;
 }
+
+.fa-brands{
+    font-size: 50px;
+    margin: 30px;
+}
