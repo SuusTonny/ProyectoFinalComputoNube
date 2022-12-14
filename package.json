@@ -1,7 +1,6 @@
 {
   "name": "crud",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
@@ -32,5 +31,14 @@
     "@babel/node": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuusTonny/ProyectoFinalComputoNube.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SuusTonny/ProyectoFinalComputoNube/issues"
+  },
+  "homepage": "https://github.com/SuusTonny/ProyectoFinalComputoNube#readme",
+  "description": ""
 }
